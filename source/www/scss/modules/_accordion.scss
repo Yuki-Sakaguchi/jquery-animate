@@ -1,0 +1,11 @@
+.js-accordion-body {
+	display: none;
+
+	&.is-open {
+		display: block;
+	}
+}
+
+.js-accordion-title {
+	cursor: pointer;
+}

@@ -1,0 +1,19 @@
+.bx-wrapper {
+    margin-bottom: 0;
+
+    .bx-viewport {
+        left: 0;
+        border: none;
+        box-shadow: none;
+    }
+}
+
+.aem-slider {
+    &[data-pagerstyle=reqt] {
+        .bx-wrapper .bx-pager.bx-default-pager a {
+            border-radius: 0;
+            width: 40px;
+            margin: 0 1px;
+        }
+    }
+}

@@ -1,0 +1,64 @@
+extends common/_layout.pug
+
+//- ページ固有の変数を宣言
+block setVariable
+    -
+        var url = 'http://loacalhost:8000'
+
+        var meta = {
+            title: 'サイトタイトル',
+            description: 'サイトの説明',
+            keywords: 'きーわーど,キーワード,keyword'
+        }
+
+        var og = {
+            title: meta.title,
+            type: 'website',
+            url: url,
+            description: meta.description,
+            image: url + '/ogp.jpg'
+        }
+
+        var twitter = {
+            card: 'summary_large_image',
+            site: '@アカウント名',
+            title: meta.title,
+            description: meta.description
+        }
+
+//- メインコンテンツ
+block content
+    main.wraper
+        div.inner
+
+            -
+                var easingList = [
+                    'easeOutBack',       // ...すっ..びよーん!
+                    'easeInOutQuad',     // ...すっ!!
+                    'easeOutElastic',    // シュッ! デュビーン！
+                    'easeInOutElastic',  // キビキビ!!
+                ];
+
+            .param-area
+                .box
+                    h3 START EASING
+                    ul.easing-list
+                        each item, index in easingList
+                            li.easing-list__item.start(data-easing=`${item}`, class=index == 0 ? "current" : "")!=item
+
+                .box
+                    h3 END EASING
+                    ul.easing-list
+                        each item, index in easingList
+                            li.easing-list__item.end(data-easing=`${item}`, class=index == 0 ? "current" : "")!=item
+
+                .box
+                    h3 SPEED
+                    input.speed-input(type="text", value="600")
+
+            //- ここから
+            nav
+                - for (var i = 0; i < 5; i++)
+                    .view-item
+                        a(href="#")
+                            .text TEST

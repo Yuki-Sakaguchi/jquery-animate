@@ -1,0 +1,149 @@
+// INDEX
+// - classes
+// - default
+// - card pane
+// - thumb contain
+// - thumb center サムネイル真ん中
+
+
+/* ========================================
+
+- classes
+
+======================================== */
+%CARD {
+  float: left;
+  overflow: hidden;
+  box-shadow: 0 0 4px rgba(#000, 0.4);
+  border-radius: 8px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  line-height: 1.25em;
+
+  .card-link {
+    display: block;
+    text-decoration: none;
+  }
+
+  time {
+    @extend %small;
+  }
+
+  .card-data {
+    padding: 10px;
+  }
+}
+
+%_card_pane {
+  @extend %CARD;
+  position: relative;
+
+  .card-data {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-size: border-box;
+  }
+}
+
+
+
+
+/* ========================================
+
+- default
+
+======================================== */
+.card {
+  @extend %CARD;
+  width: 300px;
+}
+
+
+
+/* ========================================
+
+- card pane
+
+======================================== */
+.card--pane {
+  @extend %_card_pane;
+
+  .card-data {
+    background-color: rgba(#000, 0.6);
+    color: #fff;
+    transition: all 200ms;
+  }
+
+  .inner {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    right: 10px;
+  }
+
+  .card-link {
+    height: 100%;
+
+    &:hover {
+      .card-data {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+
+/* ========================================
+
+- thumb contain
+
+======================================== */
+.card--pane {
+  $_h: 300px;
+  width: $_h;
+  height: $_h;
+
+  .thumb--contain {
+    position: relative;
+    width: $_h;
+    height: $_h;
+
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: auto;
+      max-width: $_h;
+      max-height: $_h;
+      margin: auto;
+    }
+  }
+}
+
+
+
+
+
+/* ========================================
+
+- thumb center
+
+======================================== */
+.card--pane {
+  .thumb--center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50%, -50%;
+
+    img {
+      max-width: none;
+      max-height: none;
+    }
+  }
+}

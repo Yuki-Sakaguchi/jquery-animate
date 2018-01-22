@@ -1,0 +1,53 @@
+/* ========================================
+    
+    post entry
+        管理画面からの登録した本文の見た目調整用
+
+======================================== */
+
+.aem-post,
+.post-entry {
+    overflow: hidden;
+    word-wrap: break-word;
+    text-align: justify;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.6em;
+    }
+
+    h4 {
+        font-size: 1.4em;
+    }
+
+    h5 {
+        font-size: 1.2em;
+    }
+
+    h6 {
+        font-size: 1em;
+    }
+
+    table,
+    iframe {
+        max-width: 100%;
+    }
+
+    table {
+        width: 100%;
+        table-layout: fixed;
+        word-break: break-word;
+    }
+}

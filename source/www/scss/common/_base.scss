@@ -1,0 +1,57 @@
+/* ========================================
+    
+    base
+        htmlタグに直接効かせるスタイル
+
+    INDEX
+        - common
+        - anti-aliasing
+
+======================================== */
+
+/* ========================================
+    common
+======================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $MAIN_FONT_FAMILY;
+    font-size: 83%;
+    line-height: 1.75;
+    font-feature-settings: "pkna";
+}
+
+img {
+    vertical-align: bottom;
+    width: 100%;
+    height: auto;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+}
+
+
+/* ========================================
+    anti-aliasing
+======================================== */
+// 文字のアンチエイリアス
+// http://creator.dwango.co.jp/14128.html
+// http://qiita.com/htomine/items/3086f30ca09adea2f8e0
+// フォントレンダリング設定: 1x解像度ではsubpixel、2x以上の解像度ではgrayscale
+
+body,
+html {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: unset;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+    body,
+    html {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}

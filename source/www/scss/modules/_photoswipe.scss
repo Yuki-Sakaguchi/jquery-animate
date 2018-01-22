@@ -1,0 +1,36 @@
+.ps-gallery {
+    width: 100%;
+	a {
+	    display: block;
+	    width: 30%;
+	    float: left;
+	    margin-right: 5%;
+	    margin-bottom: 5%;
+	    position: relative;
+
+		span,
+		img {
+			width: 100%;
+		}
+	}
+
+	&:nth-child(3n) {
+		a {
+			margin-right: 0;
+		}
+	}
+
+	.pswp__button {
+		&--share {
+			display: none;
+		}
+		&__center {
+	    	display: block;
+		}
+	}
+
+	figcaption {
+		display: none;
+	}
+}
+

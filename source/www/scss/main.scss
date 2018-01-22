@@ -1,0 +1,50 @@
+@charset 'UTF-8';
+
+/* ========================================
+    common
+        サイト全体の設定、定義など
+======================================== */
+@import "common/variables";
+@import "common/mixins";
+@import "common/reset";
+@import "common/normalize";
+@import "common/base";
+@import "common/parts";
+@import "common/animation";
+
+
+/* ========================================
+    modules
+        外部プラグインなどで使うもの
+======================================== */
+// @import "modules/accordion";
+// @import "modules/bxslider_reset";
+// @import "modules/card";
+// @import "modules/colorbox_reset";
+// @import "modules/photoswipe";
+// @import "modules/share_buttons";
+
+
+/* ========================================
+    components
+        共通で使うパーツを書くスタイル
+======================================== */
+@import "components/common";
+@import "components/header";
+@import "components/footer";
+@import "components/menu";
+// @import "components/movie";
+// @import "components/post-entry";
+// @import "components/form";
+
+@media screen and (min-width: $BP_M) {
+    // タブレット以上の場合のみホバーを適応
+    @import "components/hover";
+}
+
+
+/* ========================================
+    pages
+        ページごとに書くスタイル
+======================================== */
+@import "pages/top";

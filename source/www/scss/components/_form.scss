@@ -1,0 +1,58 @@
+/* ========================================
+    
+    form
+        デバイスによる違いを吸収
+
+    INDEX
+        - default
+        - 見た目を初期化
+
+======================================== */
+
+/* ========================================
+    default
+======================================== */
+input,
+textarea,
+select {
+    // スマホ・タブレット用
+    @include mq-l() {
+        font-size: 16px;
+    }
+}
+
+/* ========================================
+    見た目を初期化
+        見た目を自分で変えたい場合はここのコメントアウトを外し、
+        iOSのデフォルトのデザインを消す。
+======================================== */
+// input[type="submit"],
+// input[type="reset"],
+// input[type="button"],
+// input[type="text"],
+// input[type="email"],
+// textarea,
+// select {
+//     appearance: none;
+// }
+//
+// input[type="text"],
+// input[type="email"],
+// input[type="submit"],
+// input[type="reset"],
+// input[type="button"],
+// input[type="email"],
+// textarea {
+//     border-radius: 0;
+//     border: none;
+//     box-sizing: border-box;
+//     background-color: transparent;
+//
+//     &:-webkit-search-decoration {
+//         display: none;
+//     }
+//
+//     &:focus {
+//         outline-offset: -2px;
+//     }
+// }
