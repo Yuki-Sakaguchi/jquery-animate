@@ -71,6 +71,10 @@ nav {
 
     .box {
         float: left;
+
+        @include mq-m() {
+          float: none;
+        }
     }
 }
 

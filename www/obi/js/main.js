@@ -5,6 +5,7 @@ $(function() {
     var easing = 'easeOutBack';
     var backEasing = 'easeInOutQuad';
     var className = 'js-active';
+    var isActive = false;
 
     // 'easeOutBack';       ...すっ..びよーん!
     // 'easeInOutQuad';     ...すっ!!
@@ -19,6 +20,12 @@ $(function() {
         var i2 = '20vw';
         var q = $this.index();
 
+        if ($this.hasClass(className)) {
+          return false;
+        }
+
+        isActive = false;
+
         backMove();
         setTimeout(function() {
             move(i, i2, q);
@@ -26,14 +33,17 @@ $(function() {
     });
 
     $target.on('mouseout', function() {
-        backMove();
+      if (isActive) {
+        return false;
+      }
+      backMove();
     });
 
     $target.on('click', function() {
         var $this = $(this);
-        isView = true;
-        $clickTarget = $(this);
+        $target.removeClass(className);
         $this.addClass(className);
+        isActive = true;
     });
 
     /**
@@ -72,9 +82,6 @@ $(function() {
             $this.children('a').children('.text').stop().animate({'width': '20vw'}, backSpeed, backEasing);
         });
     }
-
-
-
 
     /**
      * スタート イージング切り替え

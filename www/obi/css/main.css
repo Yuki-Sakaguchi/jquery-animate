@@ -1625,6 +1625,12 @@ nav .view-item a .text {
   float: left;
 }
 
+@media screen and (max-width: 780px) {
+  .param-area .box {
+    float: none;
+  }
+}
+
 .easing-list__item {
   padding: 10px;
   color: white;

@@ -12,8 +12,8 @@ pug = require 'gulp-pug'
 
 # root paths
 path = {
-    source: './source/www'
-    public: './www'
+    source: __dirname
+    public: do () => __dirname.replace '/source', ''
 }
 
 
